@@ -12,10 +12,10 @@ use Jenssegers\Mongodb\Eloquent\Model;
  * @property string $pedigreeName,
  * @property string $countryCode,
  * @property string $sex,
+ * @property string $colour,
  * @property int $age,
- * @property int $height,
- * @property array $record,
- * @property string[] $riderIds,
+ * @property float $height,
+ * @property string $riderId,
  */
 class Mount extends Model
 {
@@ -25,10 +25,10 @@ class Mount extends Model
         'surName',
         'countryCode',
         'sex',
+        'colour',
         'age',
         'height',
-        'record',
-        'riderIds',
+        'riderId',
     ];
 
     protected $table = 'mounts';

@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\RiderController;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Rider\FetchAllRidersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('all-riders', [RiderController::class, 'fetchAllRiders']);
+Route::prefix('riders')->group(function () {
+    Route::get('all', [FetchAllRidersController::class, 'fetchAllRiders']);
+});
