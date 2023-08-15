@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Mount\FetchAllMountsController;
 use App\Http\Controllers\Mount\FetchMountsController;
+use App\Http\Controllers\Rider\CreateNewRiderController;
 use App\Http\Controllers\Rider\DeleteRiderController;
 use App\Http\Controllers\Rider\FetchAllRidersController;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('riders')->group(function () {
     Route::get('all', [FetchAllRidersController::class, 'fetchAllRiders']);
+    Route::post('create', [CreateNewRiderController::class, 'createRider']);
     Route::post('delete', [DeleteRiderController::class, 'deleteRider']);
 });
 
