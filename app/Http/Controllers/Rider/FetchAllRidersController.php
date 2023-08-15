@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Rider;
 
+use App\Domains\Rider\Rider;
 use App\Http\Controllers\Controller;
-use App\Models\Rider;
 use Illuminate\Http\JsonResponse;
 
 class FetchAllRidersController extends Controller

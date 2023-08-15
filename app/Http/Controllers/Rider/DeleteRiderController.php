@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Rider;
 
+use App\Domains\Rider\Rider;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Rider\DeleteRiderRequest;
-use App\Models\Rider;
 
 class DeleteRiderController extends Controller
 {

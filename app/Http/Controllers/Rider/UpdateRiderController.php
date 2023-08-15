@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Rider;
 
+use App\Domains\Rider\Rider;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Rider\CreateNewRiderRequest;
+use App\Http\Requests\Rider\UpdateRiderRequest;
 use App\Services\Rider\FetchValidatedRiderDataService;
 use App\Services\Rider\RiderService;
 
-class CreateNewRiderController extends Controller
+class UpdateRiderController extends Controller
 {
     private FetchValidatedRiderDataService $fetchValidatedRiderDataService;
 
@@ -24,9 +25,12 @@ class CreateNewRiderController extends Controller
         $this->riderService = $riderService;
     }
 
-    public function createRider(CreateNewRiderRequest $request): void
+    public function updateRider(UpdateRiderRequest $request): void
     {
         $data = $this->fetchValidatedRiderDataService->fetchValidatedRiderData($request);
-        $this->riderService->createRider($data);
+
+        /** @var Rider $rider */
+        $rider = Rider::query()->firstOrFail($data['id']);
+        $this->riderService->updateRider($data, $rider);
     }
 }

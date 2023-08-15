@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Mount;
 
+use App\Domains\Mount\Mount;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Mount\FetchMountsRequest;
-use App\Models\Mount;
 use Illuminate\Http\JsonResponse;
 
 class FetchMountsController extends Controller
