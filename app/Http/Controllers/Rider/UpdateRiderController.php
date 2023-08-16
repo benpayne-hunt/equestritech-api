@@ -30,7 +30,7 @@ class UpdateRiderController extends Controller
         $data = $this->fetchValidatedRiderDataService->fetchValidatedRiderData($request);
 
         /** @var Rider $rider */
-        $rider = Rider::query()->firstOrFail($data['id']);
+        $rider = Rider::query()->find($data['id']);
         $this->riderService->updateRider($data, $rider);
     }
 }

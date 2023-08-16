@@ -9,7 +9,7 @@ class FetchMountsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'mountIds' => ['array', 'required'],
+            'mountIds' => ['array', 'nullable'],
         ];
     }
 }
