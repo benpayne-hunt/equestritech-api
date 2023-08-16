@@ -16,6 +16,7 @@ use Jenssegers\Mongodb\Eloquent\Model;
  * @property int $age,
  * @property float $height,
  * @property string $riderId,
+ * @property string $imageUrl,
  */
 class Mount extends Model
 {
@@ -29,6 +30,7 @@ class Mount extends Model
         'age',
         'height',
         'riderId',
+        'imageUrl,'
     ];
 
     protected $table = 'mounts';
